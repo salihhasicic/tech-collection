@@ -1,0 +1,78 @@
+.nav-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  padding: 1px;
+  overflow: hidden;
+  background: var(--border-dim);
+  cursor: pointer;
+  transition: transform var(--transition-mid), box-shadow var(--transition-mid);
+  height: 100%;
+}
+
+.nav-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Rotating conic gradient border */
+.nav-card__spinner {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    var(--accent) 12%,
+    var(--accent-dim) 22%,
+    transparent 38%
+  );
+  animation: nav-card-spin 3.5s linear infinite;
+  animation-play-state: paused;
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+
+.nav-card:hover .nav-card__spinner {
+  animation-play-state: running;
+  opacity: 1;
+}
+
+@keyframes nav-card-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Inner surface (covers spinner, leaving only 1px edge) */
+.nav-card__inner {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-card);
+  border-radius: calc(var(--radius-lg) - 1px);
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Mouse-tracking spotlight overlay */
+.nav-card__spotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--accent-glow-strong),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-mid);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nav-card:hover .nav-card__spotlight {
+  opacity: 1;
+}
+
+.nav-card__content {
+  position: relative;
+  z-index: 1;
+}

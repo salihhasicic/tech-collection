@@ -1,0 +1,41 @@
+:root {
+  --bg:             #080c0a;
+  --bg-2:           #0e130c;
+  --bg-card:        #111612;
+  --bg-card-hover:  #161c14;
+
+  --accent:         #a3e635;
+  --accent-dim:     #65a30d;
+  --accent-glow:         rgba(163, 230, 53, 0.10);
+  --accent-glow-strong:  rgba(163, 230, 53, 0.22);
+
+  --text:      #e2e8d9;
+  --text-dim:  #6b7a5f;
+  --text-muted:#3d4a35;
+
+  --border:        rgba(163, 230, 53, 0.20);
+  --border-dim:    rgba(163, 230, 53, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-mono:    'Space Mono', 'Courier New', monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  --nav-height: 60px;
+
+  --transition-fast: 150ms ease;
+  --transition-mid:  250ms ease;
+  --transition-slow: 400ms ease;
+}
